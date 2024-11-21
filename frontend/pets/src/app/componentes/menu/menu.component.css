@@ -1,0 +1,202 @@
+:host{
+    width: 100%;
+    height: 100%;
+    background-color: var(--var-cor-fundo);
+    overflow: hidden; /* Evita rolagem na tela principal */
+}
+
+.corpoMenu{
+    width: 100%;
+    height: 100%;    
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    grid-template-rows: 1fr 9fr;
+
+    grid-template-areas:
+    "cabecalho cabecalho"
+    "listaMenus conteudo";
+    background-color: var(--var-cor-fundo);
+}
+
+.cabecalho{
+    grid-area:cabecalho;    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--var-cor-primaria);
+    border-bottom: 0.1rem solid var(--var-cor-verde-borda-escura);
+}
+
+.logo{
+    width: 20%;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0.3rem;
+    cursor: pointer;
+}
+
+.logo > img{
+    width: 20%;
+    height: auto;
+    max-height: 90%;
+    cursor: pointer;
+}
+
+.logo > span{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    text-align: left;    
+    align-items: center;
+    font-size: 2rem;
+    color: var(--var-cor-letra);
+    padding-left: 1rem;
+}
+
+.usuario{
+    width: 80%;
+    height: 100%; 
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    padding-right: 1rem;   
+    position: relative;
+}
+
+.usuario > div{
+    width: 5%;
+    height: 80%;
+    cursor: pointer;
+    border: 0.1rem solid black;
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--var-cor-secundaria);
+    transition: all 0.3s ease;
+}
+
+
+.usuario > div.hovered {
+    border-radius: 0;
+    background-color: #cf0000;
+}
+
+.usuario > div.hovered:active {
+    background-color: #ff4848; 
+}
+
+.menuOpcoes {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 0.1rem solid var(--var-cor-verde-borda-escura);
+    border-radius: 0.3rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.menuOpcoes button {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.menuOpcoes button:hover {
+    background-color: var(--var-cor-verde-claro);
+}
+
+.listaMenus {
+    grid-area: listaMenus;
+    border-right: 0.1rem solid var(--var-cor-verde-borda-escura);
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: var(--var-cor-verde-claro);
+    display: flex;
+    flex-direction: column;
+}
+
+.listaMenus > div{
+    width: 100%;
+    height: 10%;
+    border-bottom: 0.1rem solid var(--var-cor-verde-borda-escura);     
+    background-color: var(--var-cor-verde-escuro);
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.listaMenus > div:hover{
+    background-color: var(--var-cor-verde);
+    cursor: pointer;
+}
+
+.listaMenus > div > div{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.listaMenus > div > div > img{
+    width: 80%;
+    max-height: 100%;    
+}
+
+.listaMenus > div > span{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.btnDeslogar {
+    width: 100%;
+    height: 10%;
+    background-color: #cf0000;
+    font-weight: bold;
+    color: var(--var-cor-letra);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: auto;
+    border-top: 0.1rem solid var(--var-cor-verde-borda-escura);
+}
+
+.btnDeslogar:hover {
+    background-color: #a00000; 
+}
+
+.btnDeslogar:active {
+    background-color: #b82d2d; 
+}
+
+.conteudo{
+    grid-area:conteudo;
+    overflow: hidden; /* Evita rolagem na área de conteúdo */
+}
+
+.corpoConteudo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;      
+}

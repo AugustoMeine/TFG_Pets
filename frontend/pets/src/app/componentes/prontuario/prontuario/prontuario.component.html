@@ -1,0 +1,30 @@
+<div class="corpoProntuario">
+    <div class="corpoProntuarioTitulo">
+        <span>Prontuario</span>
+    </div>
+    <div class="corpoProntuarioBotao">
+        <button class="btn btn-verde" (click)="adicionarProntuario()">Adicionar</button>
+    </div>
+    <table> <!--<table>: Define o INICIO e o FIM da tabela.-->        
+        <thead>   
+            <tr>  
+                <th *ngFor="let cabecalho of getKeys(listaProntuarios)">{{ cabecalho }}</th>                 
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr *ngFor="let prontuario of listaProntuarios">
+                <td *ngIf="prontuario.status === 'Ativo'">{{nomeAnimal(prontuario.idAnimal)}}</td>                
+                <td *ngIf="prontuario.status === 'Ativo'">{{prontuario.temperatura}}</td>                
+                <td *ngIf="prontuario.status === 'Ativo'">{{prontuario.frequenciaCardiaca}}</td>
+                <td *ngIf="prontuario.status === 'Ativo'">{{prontuario.sintomas}}</td>
+                <td *ngIf="prontuario.status === 'Ativo'">{{prontuario.diagnosticoProvavel}}</td>
+                <td *ngIf="prontuario.status === 'Ativo'">{{prontuario.diagnosticoDefinitivo}}</td>
+                <td *ngIf="prontuario.status === 'Ativo'">{{prontuario.dataCriacao}}</td>
+                <td *ngIf="prontuario.status === 'Ativo'" (click)="atualizarProntuario(prontuario.idProntuario)"><img src="svg/lapis.svg" alt="-"/></td>
+                <td *ngIf="prontuario.status === 'Ativo'" (click)="desligarProntuario(prontuario.idProntuario)"><img src="svg/x.svg" alt="-"/></td>
+            </tr>                        
+        </tbody>
+    
+    </table>
+</div>

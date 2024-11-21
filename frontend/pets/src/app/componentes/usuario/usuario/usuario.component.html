@@ -1,0 +1,28 @@
+<div class="corpoUsuario">
+  <div class="corpoUsuarioTitulo">
+    <span>Usuario</span>
+  </div>
+  <div class="corpoUsuarioBotao">
+    <button class="btn btn-verde" (click)="adicionarUsuario()">Adicionar</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let cabecalho of getKeys(listaUsuarios)">{{ cabecalho }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of listaUsuarios">
+        <td *ngIf="usuario.status === 'Ativo'">{{ usuario.nome }}</td>
+        <td *ngIf="usuario.status === 'Ativo'">{{ usuario.email }}</td>
+        <td *ngIf="usuario.status === 'Ativo'">{{ usuario.dataCriacao }}</td>
+        <td *ngIf="usuario.status === 'Ativo'">{{ usuario.dataEncerramento }}</td>
+        <td *ngIf="usuario.status === 'Ativo'">{{ acessos[usuario.idUsuario]?.acessoAdministrador }}</td>
+        <td *ngIf="usuario.status === 'Ativo'">{{ acessos[usuario.idUsuario]?.acessoMedicoVeterinario }}</td>
+        <td *ngIf="usuario.status === 'Ativo'">{{ acessos[usuario.idUsuario]?.acessoAtendente }}</td>
+        <td *ngIf="usuario.status === 'Ativo'" (click)="atualizarUsuario(usuario.idUsuario)"><img src="svg/lapis.svg" alt="-" /></td>
+        <td *ngIf="usuario.status === 'Ativo'" (click)="desligarUsuario(usuario.idUsuario)"><img src="svg/x.svg" alt="-" /></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

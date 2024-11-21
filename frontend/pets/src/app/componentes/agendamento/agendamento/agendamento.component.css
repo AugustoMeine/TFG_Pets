@@ -1,0 +1,236 @@
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.titulo > span {
+  color: var(--var-cor-verde-escuro);
+  font-size: 2rem; /* Default font size */
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+
+.conteudo {
+  display: flex;
+  flex: 1;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.calendario {
+  width: 70%;
+  padding: 0 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendario-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--var-cor-verde-escuro);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: var(--var-cor-fundo-escuro);
+}
+
+.calendario-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendario-header label {
+  margin-right: 0.5rem;
+  font-weight: bold;
+  color: var(--var-cor-verde-escuro);
+}
+
+.calendario-header select {
+  margin: 0 1rem 0 0;
+  padding: 0.75rem;
+  border: 1px solid var(--var-cor-verde-claro);
+  border-radius: 0.5rem;
+  background-color: var(--var-cor-fundo);
+}
+
+.calendario-body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 2px solid var(--var-cor-verde-escuro);
+  border-radius: 0.5rem;
+  background-color: var(--var-cor-fundo);
+}
+
+.calendario-day {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--var-cor-verde-claro);
+  background-color: var(--var-cor-fundo-escuro);
+  cursor: pointer;
+}
+
+.calendario-day:hover {
+  background-color: var(--var-cor-verde-claro);
+}
+
+.calendario-day:active {
+  background-color: var(--var-cor-verde);
+}
+
+.calendario-day.selected {
+  background-color: var(--var-cor-verde);
+  color: white;
+}
+
+.lista-agendamentos {
+  width: 30%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.lista-agendamentos-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--var-cor-verde-escuro);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: var(--var-cor-fundo-escuro);
+}
+
+.lista-agendamentos-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: var(--var-cor-verde-escuro);
+}
+
+.lista-agendamentos-titulos {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  font-weight: bold;
+  color: var(--var-cor-verde-escuro);
+  border: 2px solid var(--var-cor-verde-escuro);
+  background-color: var(--var-cor-fundo);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.lista-agendamentos ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  width: 100%;
+  border: 2px solid var(--var-cor-verde-escuro);
+  border-top: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background-color: var(--var-cor-fundo);
+  overflow-y: auto;
+}
+
+.lista-agendamentos li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--var-cor-verde-claro);
+  transition: background-color 0.3s ease;
+}
+
+.lista-agendamentos li:hover {
+  background-color: var(--var-cor-verde-claro);
+}
+
+.lista-agendamentos li span {
+  flex: 1;
+  text-align: center;
+}
+
+.lista-agendamentos button {
+  background-color: #00BF41;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 0.25rem;
+}
+
+.lista-agendamentos button:hover {
+  background-color: #009F35;
+}
+
+.lista-agendamentos button:active {
+  background-color: #33D17A;
+}
+
+.adicionar-agendamento {
+  margin-top: 1rem;
+  align-self: center;
+  background-color: #00BF41;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 0.25rem;
+}
+
+.adicionar-agendamento:hover {
+  background-color: #009F35;
+}
+
+.adicionar-agendamento:active {
+  background-color: #33D17A;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .titulo > span {
+    font-size: 1.8rem; /* Adjust font size for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo > span {
+    font-size: 1.5rem; /* Adjust font size for small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo > span {
+    font-size: 1.2rem; /* Adjust font size for extra small screens */
+  }
+}

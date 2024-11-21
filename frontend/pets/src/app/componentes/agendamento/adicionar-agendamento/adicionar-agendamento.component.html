@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="titulo">
+    <span>Agendamento</span>
+  </div>
+  <div class="conteudo">
+    <div class="calendario">
+      <div class="calendario-container">
+        <div class="calendario-header">
+          <label for="year-select">Ano:</label>
+          <select id="year-select" [(ngModel)]="this.selectedAno" (change)="atualizarDias()">
+            <option *ngFor="let year of anos" [value]="year">{{ year }}</option>
+          </select>
+          <label for="month-select">Mês:</label>
+          <select id="month-select" [(ngModel)]="this.selectedMonth" (change)="atualizarDias()">
+            <option *ngFor="let month of meses" [value]="month.value">{{ month.name }}</option>
+          </select>
+        </div>
+        <div class="calendario-body">
+          <div *ngFor="let day of diasMes" 
+               class="calendario-day" 
+               [class.selected]="day === selectedDay" 
+               (click)="selecionarDia(day)">
+            {{ day }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lista-agendamentos">
+      <div class="lista-agendamentos-container">
+        <div class="lista-agendamentos-header">
+          <span>Horários disponíveis</span>
+        </div>
+        <div class="cliente-animal-select-container">
+          <label for="cliente-animal-select">Cliente - Animal:</label>
+          <select id="cliente-animal-select" [(ngModel)]="selectedClienteAnimal">
+            <option *ngFor="let item of listaClienteAnimal" [value]="item.idListaClienteAnimal">
+              {{ getClienteNome(item.idCliente) }} - {{ getAnimalNome(item.idAnimal) }}
+            </option>
+          </select>
+        </div>
+        <div class="lista-agendamentos-titulos">
+          <span style="flex: 1; text-align: center;">Hora</span>
+        </div>        
+        <ul>
+          <li *ngFor="let horario of listaHorariosDisponiveis" 
+              [class.selected]="horariosSelecionados.includes(horario)" 
+              (click)="selecionarHorario(horario)">
+            <span>{{ horario }}</span>
+          </li>
+        </ul>
+        <div class="botoes-container">
+          <button class="btn btn-vermelho" (click)="retornarAgendamento()">Retornar</button>
+          <button class="btn btn-verde" (click)="salvarAgendamento()">Adicionar agendamento</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

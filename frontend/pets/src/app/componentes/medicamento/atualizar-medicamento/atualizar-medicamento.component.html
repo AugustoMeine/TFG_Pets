@@ -1,0 +1,22 @@
+<div class="corpoFormularioMedicamento">
+    <div class="formulario">
+        
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" [(ngModel)]="medicamentoDadosTela.nome" required>
+        </div>
+        <div>
+            <label for="principioAtivo">Princípio Ativo:</label>
+            <input type="text" id="principioAtivo" [(ngModel)]="medicamentoDadosTela.principioAtivo" required>
+        </div>
+        <div>
+            <label for="fabricante">Fabricante:</label>
+            <input type="text" id="fabricante" [(ngModel)]="medicamentoDadosTela.fabricante" required>
+        </div>
+        
+    </div>
+    <div class="botoes">
+        <button class="btn btn-vermelho" (click)="retornarTelaMedicamento()">Retornar</button>
+        <button class="btn btn-verde" (click)="atualizarMedicamento()">Atualizar</button>        
+    </div>    
+</div>

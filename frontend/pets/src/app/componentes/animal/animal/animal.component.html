@@ -1,0 +1,29 @@
+<div class="corpoAnimal">
+    <div class="corpoAnimalTitulo">
+        <span>Animal</span>
+    </div>
+    <div class="corpoAnimalBotao">
+        <button class="btn btn-verde" (click)="adicionarAnimal()">Adicionar</button>
+    </div>
+    <table> <!--<table>: Define o INICIO e o FIM da tabela.-->        
+        <thead>   
+            <tr>  
+                <th *ngFor="let cabecalho of getKeys(listaAnimais)">{{ cabecalho }}</th>                 
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let animal of listaAnimais">
+                <td *ngIf="animal.status === 'Ativo'">{{animal.nome}}</td>                
+                <td *ngIf="animal.status === 'Ativo'">{{animal.peso}}</td>                
+                <td *ngIf="animal.status === 'Ativo'">{{animal.raca}}</td>
+                <td *ngIf="animal.status === 'Ativo'">{{animal.idade}}</td>
+                <td *ngIf="animal.status === 'Ativo'">{{animal.sexo}}</td>    
+                <td *ngIf="animal.status === 'Ativo'">{{getClienteNome(animal.idAnimal)}}</td>
+                <td *ngIf="animal.status === 'Ativo'" (click)="atualizarAnimal(animal.idAnimal)"><img src="svg/lapis.svg" alt="-"/></td>
+                <td *ngIf="animal.status === 'Ativo'" (click)="desligarAnimal(animal.idAnimal)"><img src="svg/x.svg" alt="-"/></td>
+            </tr>                        
+        </tbody>
+    
+    </table>
+</div>

@@ -1,0 +1,30 @@
+<div class="corpoCliente">
+    <div class="corpoClienteTitulo">
+        <span>Cliente</span>
+    </div>
+    <div class="corpoClienteBotao">
+        <button class="btn btn-verde" (click)="adicionarCliente()">Adicionar</button>
+    </div>
+    <table>        
+        <thead>   
+            <tr>  
+                <th *ngFor="let cabecalho of getKeys(listaClientes)">{{ cabecalho }}</th>                 
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let cliente of listaClientes">
+                <td *ngIf="cliente.status === 'Ativo'">{{cliente.nome}}</td>                
+                <td *ngIf="cliente.status === 'Ativo'">{{cliente.dataNascimento}}</td>                
+                <td *ngIf="cliente.status === 'Ativo'">{{cliente.cpf | mask: '000.000.000-00'}}</td>
+                <td *ngIf="cliente.status === 'Ativo'">{{cliente.registroGeral | mask: '00.000.000-0'}}</td>
+                <td *ngIf="cliente.status === 'Ativo'">{{cliente.telefone | mask: '(00) 00000-0000'}}</td>
+                <td *ngIf="cliente.status === 'Ativo'">{{cliente.email}}</td>
+                <td *ngIf="cliente.status === 'Ativo'" (click)="enviarMensagemWhatsApp(cliente.telefone)"><img src="svg/telefone.svg" alt="-"/></td>
+                <td *ngIf="cliente.status === 'Ativo'" (click)="atualizarCliente(cliente.idCliente)"><img src="svg/lapis.svg" alt="-"/></td>
+                <td *ngIf="cliente.status === 'Ativo'" (click)="desligarCliente(cliente.idCliente)"><img src="svg/x.svg" alt="-"/></td>
+            </tr>                        
+        </tbody>
+    
+    </table>
+</div>

@@ -1,0 +1,81 @@
+:root{
+    --var-cor-fundo: #F0F8FF;
+    --var-cor-fundo-escuro: #e2e8ec;
+    --var-cor-letra: #000000;
+    --var-cor-primaria: #7cf49a;
+    --var-cor-secundaria: #91FFCF;
+    --var-cor-verde:#456B5A;
+    --var-cor-verde-claro:#68A08F;
+    --var-cor-verde-escuro:#3c5c4e;
+    --var-cor-verde-borda-escura:#263b32;
+    --font-size-base: 0.8vw; /* Base font size relative to viewport width */
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;    
+    background-color: var(--var-cor-fundo);
+    font-size: var(--font-size-base); /* Apply base font size */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    color: var(--var-cor-letra);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn {   
+    color: rgb(255, 255, 255);
+    border: 1px solid black; 
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 1rem; /* Ensure button text scales with base font size */
+}
+
+.btn:hover {    
+    color: rgb(255, 255, 255);
+}
+
+.btn-verde {
+    background-color: #00BF41;
+}
+
+.btn-verde:hover {
+    background-color: rgb(0, 110, 0);
+}
+
+.btn-vermelho {
+    background-color: rgb(234, 83, 83);
+}
+
+.btn-vermelho:hover {
+    background-color: rgb(238, 44, 44);
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 1200px) {
+    :root {
+        --font-size-base: 1.1vw;
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --font-size-base: 1.3vw;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: 1.5vw;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --font-size-base: 1.75vw;
+    }
+}

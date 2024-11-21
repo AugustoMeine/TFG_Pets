@@ -1,0 +1,83 @@
+:host{
+    width: 100%;
+    height: 100%;
+}
+
+.corpoProntuario{
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+}
+
+.corpoProntuarioTitulo{    
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+}
+
+.corpoProntuarioTitulo > span{  
+    width: 50%;
+    height: 100%; 
+    color: var(--var-cor-verde-escuro);
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.2rem;
+}
+
+.corpoProntuarioBotao{    
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-direction: row;
+    padding-right: 0.5rem;
+}
+
+.corpoProntuarioBotao > button{    
+    width: 20%;
+    height: 70%; 
+    font-size: 1.3rem;   
+    letter-spacing: 0.2rem;
+}
+
+.corpoProntuario > table, th, td{    
+    border: 1px solid black;
+    border-collapse: collapse; 
+    text-align: center;
+}
+
+.corpoProntuario > table{    
+    width: 100%;
+    max-height: 100%;
+}
+
+.corpoProntuario > table > thead > tr > th{ 
+    background-color: var(--var-cor-verde-escuro);
+    color: white;
+    font-style: italic;
+    padding: 0.2rem;
+}
+
+.corpoProntuario > table > tbody > tr:nth-child(even) {
+    background-color: rgb(210, 210, 210);
+}
+
+.corpoProntuario > table > tbody > tr:nth-child(odd) {
+    background-color: #ff0000;
+    background-color: rgb(240, 240, 240);
+}
+
+
+.corpoProntuario > table > tbody > tr > td{
+    cursor: pointer;
+    padding: 0.2rem;
+}

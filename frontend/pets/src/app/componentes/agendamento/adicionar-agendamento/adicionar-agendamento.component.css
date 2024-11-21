@@ -1,0 +1,269 @@
+:host {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+}
+
+.titulo > span {
+    width: 50%;
+    height: 100%;
+    color: var(--var-cor-verde-escuro);
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.2rem;
+}
+
+.conteudo {
+    display: flex;
+    flex: 1;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.calendario {
+    width: 70%;
+    padding: 0 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendario-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid var(--var-cor-verde-escuro);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    background-color: var(--var-cor-fundo-escuro);
+}
+
+.calendario-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.calendario-header label {
+    margin-right: 0.5rem;
+    font-weight: bold;
+    color: var(--var-cor-verde-escuro);
+}
+
+.calendario-header select {
+    margin: 0 1rem 0 0;
+    padding: 0.75rem;
+    border: 1px solid var(--var-cor-verde-claro);
+    border-radius: 0.5rem;
+    background-color: var(--var-cor-fundo);
+}
+
+.calendario-body {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    border: 2px solid var(--var-cor-verde-escuro);
+    border-radius: 0.5rem;
+    background-color: var(--var-cor-fundo);
+}
+
+.calendario-day {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--var-cor-verde-claro);
+    background-color: var(--var-cor-fundo-escuro);
+    cursor: pointer;
+}
+
+.calendario-day:hover {
+    background-color: var(--var-cor-verde-claro);
+}
+
+.calendario-day:active {
+    background-color: var(--var-cor-verde);
+}
+
+.calendario-day.selected {
+    background-color: var(--var-cor-verde);
+    color: white;
+}
+
+.lista-agendamentos {
+    width: 30%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.lista-agendamentos-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid var(--var-cor-verde-escuro);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: var(--var-cor-fundo-escuro);
+}
+
+.lista-agendamentos-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--var-cor-verde-escuro);
+}
+
+.lista-agendamentos-titulos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    font-weight: bold;
+    color: var(--var-cor-verde-escuro);
+    border: 2px solid var(--var-cor-verde-escuro);
+    background-color: var(--var-cor-fundo);    
+}
+
+.lista-agendamentos ul {
+    list-style-type: none;
+    padding: 0.5rem;
+    margin: 0;
+    flex: 1;
+    width: 100%;
+    border: 0.1rem solid var(--var-cor-verde-escuro);
+    border-top: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    background-color: var(--var-cor-fundo);
+    overflow-y: auto;
+}
+
+.lista-agendamentos li {
+    display: flex;
+    justify-content: center; /* Centralizar o texto */
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer; /* Adicionar cursor pointer */
+}
+
+.lista-agendamentos li.selected {
+    background-color: var(--var-cor-verde-escuro); /* Alterar cor de fundo para verde escuro */
+    color: white;
+}
+
+.lista-agendamentos li span {
+    flex: 1;
+    text-align: center;
+}
+
+.lista-agendamentos button,
+.adicionar-agendamento {
+    background-color: #00BF41;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.lista-agendamentos button:hover,
+.adicionar-agendamento:hover {
+    background-color: #009F35;
+}
+
+.lista-agendamentos button:active,
+.adicionar-agendamento:active {
+    background-color: #33D17A;
+}
+
+.cliente-animal-select-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.cliente-animal-select-container label {
+    margin-right: 0.5rem;
+    font-weight: bold;
+    color: var(--var-cor-verde-escuro);
+}
+
+.cliente-animal-select-container select {
+    padding: 0.75rem;
+    border: 1px solid var(--var-cor-verde-claro);
+    border-radius: 0.5rem;
+    background-color: var(--var-cor-fundo);
+}
+
+.botoes-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%; /* Ajustar a largura total dos botões */
+    margin-top: 1rem;
+    gap: 1rem; /* Adicionar espaço entre os botões */
+}
+
+.botoes-container .btn-vermelho,
+.botoes-container .btn-verde {
+    flex: 1; /* Garantir que ambos os botões ocupem o mesmo espaço */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botoes-container .btn-vermelho {
+    background-color: #FF0000;
+}
+
+.botoes-container .btn-vermelho:hover {
+    background-color: #CC0000;
+}
+
+.botoes-container .btn-vermelho:active {
+    background-color: #FF3333;
+}
+
+.botoes-container .btn-verde {
+    background-color: #00BF41;
+}
+
+.botoes-container .btn-verde:hover {
+    background-color: #009F35;
+}
+
+.botoes-container .btn-verde:active {
+    background-color: #33D17A;
+}

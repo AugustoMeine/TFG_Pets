@@ -1,0 +1,53 @@
+<div class="corpoFormularioProntuario">
+    <div class="formulario">
+
+        <div>
+            <label for="raca">Animal:</label>
+            <select id="raca" [(ngModel)]="animalSelecionado" required>               
+                <option *ngFor="let raca of listaAnimaisCadastrados" [value]="raca.idAnimal">{{ raca.nome }}</option>                
+            </select>
+        </div>
+        <div>
+            <label for="temperatura">Temperatura:</label>
+            <input type="number" id="temperatura" [(ngModel)]="prontuarioDadosTela.temperatura" required>
+        </div>
+        <div>
+            <label for="frequenciaCardiaca">Frequência Cardíaca:</label>
+            <input type="number" id="frequenciaCardiaca" [(ngModel)]="prontuarioDadosTela.frequenciaCardiaca" required>
+        </div>
+        <div class="campo-texto-grande">
+            <label for="sintomas">Sintomas:</label>
+            <textarea id="sintomas" [(ngModel)]="prontuarioDadosTela.sintomas" required></textarea>
+        </div>
+        <div class="medicamentos-container">
+            <label for="medicamentos">Medicamentos:</label>
+            <div class="medicamentos-lista">                
+                <ul id="medicamentos">
+                    <li *ngFor="let medicamento of listaMedicamentos" (click)="adicionarMedicamento(medicamento)">
+                        {{ medicamento.nome }}
+                    </li>
+                </ul>
+            </div>
+            <label for="listaMedicamentos">Medicamentos Vinculados:</label>
+            <div class="medicamentos-vinculados">                
+                <ul id="listaMedicamentos" class="lista-medicamentos">
+                    <li *ngFor="let medicamento of listaMedicamentosSelecionados" (click)="removerMedicamento(medicamento)">
+                        {{medicamento.nome}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="campo-texto-grande">
+            <label for="diagnosticoProvavel">Diagnóstico Provável:</label>
+            <textarea id="diagnosticoProvavel" [(ngModel)]="prontuarioDadosTela.diagnosticoProvavel" required></textarea>
+        </div>
+        <div class="campo-texto-grande">
+            <label for="diagnosticoDefinitivo">Diagnóstico Definitivo:</label>
+            <textarea id="diagnosticoDefinitivo" [(ngModel)]="prontuarioDadosTela.diagnosticoDefinitivo" required></textarea>
+        </div>
+    </div>
+    <div class="botoes">
+        <button class="btn btn-vermelho" (click)="retornarTelaProntuario()">Retornar</button>
+        <button class="btn btn-verde" (click)="adicionarProntuario()">Adicionar</button>        
+    </div>
+</div>

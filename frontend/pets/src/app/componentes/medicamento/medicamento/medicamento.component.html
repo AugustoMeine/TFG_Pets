@@ -1,0 +1,26 @@
+<div class="corpoMedicamento">
+    <div class="corpoMedicamentoTitulo">
+        <span>Medicamento</span>
+    </div>
+    <div class="corpoMedicamentoBotao">
+        <button class="btn btn-verde" (click)="adicionarMedicamento()">Adicionar</button>
+    </div>
+    <table> <!--<table>: Define o INICIO e o FIM da tabela.-->        
+        <thead>   
+            <tr>  
+                <th *ngFor="let cabecalho of getKeys(listaMedicamentos)">{{ cabecalho }}</th>                 
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let medicamento of listaMedicamentos">
+                <td *ngIf="medicamento.status === 'Ativo'">{{medicamento.nome}}</td>                
+                <td *ngIf="medicamento.status === 'Ativo'">{{medicamento.principioAtivo}}</td>                
+                <td *ngIf="medicamento.status === 'Ativo'">{{medicamento.fabricante}}</td>
+                <td *ngIf="medicamento.status === 'Ativo'" (click)="atualizarMedicamento(medicamento.idMedicamento)"><img src="svg/lapis.svg" alt="-"/></td>
+                <td *ngIf="medicamento.status === 'Ativo'" (click)="desligarMedicamento(medicamento.idMedicamento)"><img src="svg/x.svg" alt="-"/></td>
+            </tr>                        
+        </tbody>
+    
+    </table>
+</div>
