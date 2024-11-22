@@ -13,15 +13,15 @@ Sistema de gerenciamento de clínica veterinária
 1. [TFG_Pets](https://github.com/AugustoMeine/TFG_Pets)
 
 ## Passo 3) Iniciar o front-end (angular)
-1. Abra o terminal do sistema operacional e entre no diretório do git que foi clonado, posteriormente acesse o diretório `...\TFG_Pets\frontend\pets`.
+1. Abra o terminal do sistema operacional e entre no diretório do git que foi clonado, posteriormente acesse o diretório `{incluir_o_caminho_do_repositório}\TFG_Pets\frontend\pets`.
 2. Execute o seguinte comando no terminal: `npm install`.
 3. Execute o seguinte comando no terminal: `ng serve`
-4. Para visualizar a página, entre no navegador web e entre no seguinte link: [http://localhost:4200/](http://localhost:4200/)
+4. Para visualizar a página, entre no navegador web e acesse o seguinte link: [http://localhost:4200/](http://localhost:4200/)
 5. Observação: Ainda será necessário iniciar o banco de dados e o serviço do back-end para poder logar e acessar as funcionalidades.
 
 ## Passo 4) Iniciar o banco de dados (Mysql).
 1. Após instalar o banco de dados na versão notificada, abra o terminal e entre no gerenciador do banco de dados digitando o seguinte comando e inserindo a senha definida na instalação: `mysql -u root -p`
-2. Após a conexão com o banco de dados, siga com a sequência de intruções abaixo:
+2. Após a conexão com o banco de dados, siga com a sequência de instruções abaixo:
     1. `CREATE DATABASE PETS;`
     2. `USE PETS;`
     3. `CREATE USER 'pets'@'localhost' IDENTIFIED BY 'pets';`
